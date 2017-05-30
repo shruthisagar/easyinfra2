@@ -1,0 +1,22 @@
+#!/bin/bash
+
+i=0
+while [ $i -lt 59 ]
+do 
+   echo "Starting Snap Shot $i at `date`..."
+   ../../bin/phantomjs '.'/snapShot.js $i
+   echo "Snap Shot Taken $i at `date`..."
+   i=`echo $i+1|bc`
+   sleep 60;
+done
+
+
+
+
+
+
+
+
+
+
+

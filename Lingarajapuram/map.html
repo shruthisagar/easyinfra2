@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Traffic layer</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="http://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
+function initialize() {
+  var myLatlng = new google.maps.LatLng(13.0084,77.6306);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies.
+Last updated December 31, 2014.
+
